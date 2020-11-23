@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WAAPI_2</title>
+    <style>
+        .shape {
+            background: red;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            var shapeElement = document.querySelector(".shape");
+            var frames = [
+                { background: "red", transform: "translateX(0px)" },
+                { background: "blue" },
+                { background: "green" },
+                { background: "red", transform: "translateX(500px)" },
+            ];
+            var timing = {
+                duration: 2500,
+                iterations: Infinity,
+                direction: "alternate"
+            }
+            var shapeAnimate = shapeElement.animate(frames, timing);
+            document.querySelector(".Play").addEventListener("click", function () { shapeAnimate.play(); });
+            document.querySelector(".Pause").addEventListener("click", function () { shapeAnimate.pause(); });
+            document.querySelector(".Reverse").addEventListener("click", function () { shapeAnimate.reverse(); });
+            document.querySelector(".UpdatePlaybackRate").addEventListener("click", function () { shapeAnimate.updatePlaybackRate(shapeAnimate.playbackRate * 1.2) });
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="shape">
+
+    </div>
+    <button class="Play">Play</button>
+    <button class="Pause">Pause</button>
+    <button class="Reverse">Reverse</button>
+    <button class="UpdatePlaybackRate">UpdatePlaybackRate</button>
+</body>
+
+</html>

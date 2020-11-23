@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Animation API</title>
+    <style>
+        #box {
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h2>¯\_(ツ)_/¯</h2>
+    </div>
+    <script>
+        var elem = document.querySelector('#box');
+        elem.animate(
+            [
+                { transform: 'translate(0px,0px)', background: 'lightred' },
+                { transform: 'translate(300px,0px)', background: 'yellow' },
+                { transform: 'translate(300px,300px)', background: 'green', transform: 'scale(0.5)' },
+                { transform: 'translate(0px,300px)', background: 'pink' },
+                { transform: 'translate(0px,0px)', background: 'black', transform: 'scale(-0.5)' }
+
+
+            ],
+            {
+                duration: 4000,
+                iterations: Infinity
+            }
+        )
+
+    </script>
+</body>
+
+</html>
